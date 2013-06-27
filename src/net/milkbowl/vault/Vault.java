@@ -29,6 +29,7 @@ import net.milkbowl.vault.chat.plugins.Chat_DroxPerms;
 import net.milkbowl.vault.chat.plugins.Chat_GroupManager;
 import net.milkbowl.vault.chat.plugins.Chat_Permissions3;
 import net.milkbowl.vault.chat.plugins.Chat_PermissionsEx;
+import net.milkbowl.vault.chat.plugins.Chat_Privileges;
 import net.milkbowl.vault.chat.plugins.Chat_bPermissions;
 import net.milkbowl.vault.chat.plugins.Chat_bPermissions2;
 import net.milkbowl.vault.chat.plugins.Chat_iChat;
@@ -195,6 +196,9 @@ public class Vault extends JavaPlugin {
 
         // Try to load zPermissions
         hookChat("zPermissions", Chat_zPermissions.class, ServicePriority.Normal, "org.tyrannyofheaven.bukkit.zPermissions.model.EntityMetadata");
+
+        // Try to load Privileges
+        hookChat("Privileges", Chat_Privileges.class, ServicePriority.Normal, "net.krinsoft.privileges.Privileges");
     }
 
     /**
@@ -217,7 +221,7 @@ public class Vault extends JavaPlugin {
         hookEconomy("CraftConomy", Economy_Craftconomy.class, ServicePriority.Normal, "me.greatman.Craftconomy.Craftconomy");
 
         // Try to load Craftconomy3
-        hookEconomy("CraftConomy3", Economy_Craftconomy3.class, ServicePriority.Normal, "com.greatmancode.craftconomy3.BukkitLoader");
+        hookEconomy("CraftConomy3", Economy_Craftconomy3.class, ServicePriority.Normal, "com.greatmancode.craftconomy3.tools.interfaces.BukkitLoader");
 
         // Try to load eWallet
         hookEconomy("eWallet", Economy_eWallet.class, ServicePriority.Normal, "me.ethan.eWallet.ECO");
